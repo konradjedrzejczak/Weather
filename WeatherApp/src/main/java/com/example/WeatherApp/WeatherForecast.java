@@ -11,6 +11,13 @@ public class WeatherForecast {
     private double temp;
     private double wind_spd;
 
+    public WeatherForecast() {
+    }
+
+    public WeatherForecast(double temp, double wind_spd) {
+        this.temp = temp;
+        this.wind_spd = wind_spd;
+    }
 
     public double getTemp() {
         return temp;

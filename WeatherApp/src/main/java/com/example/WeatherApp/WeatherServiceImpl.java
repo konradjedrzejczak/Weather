@@ -42,7 +42,6 @@ public class WeatherServiceImpl implements WeatherService {
             weatherForecast.setTemp(weatherData.getTemp());
             weatherForecast.setWindSpd(weatherData.getWindSpeed());
         }
-
-        return weatherForecast;
+        return new WeatherForecast(weatherForecast.getTemp(), weatherForecast.getWindSpd());
     }
 }

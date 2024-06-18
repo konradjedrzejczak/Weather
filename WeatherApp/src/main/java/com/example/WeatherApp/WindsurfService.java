@@ -17,9 +17,9 @@ public class WindsurfService {
     private final List<WindsurfSpot> spots = Arrays.asList(
             new WindsurfSpot("Jastarnia", 54.6403, 18.6709),
             new WindsurfSpot("Bridgetown", 13.1033, -59.6122),
-            new WindsurfSpot("Fortaleza", -3.7171, -38.4444),
-            new WindsurfSpot("Pissouri", 34.8963, 32.9917),
-            new WindsurfSpot("Le Morne", -20.2364, 57.3272)
+            new WindsurfSpot("Fortaleza", -3.7171,   -38.54306000  ),
+            new WindsurfSpot("Pissouri", 34.6694, 32.7013),
+            new WindsurfSpot("Le Morne", -20.2364, 57.5521)
     );
 
 
@@ -30,7 +30,7 @@ public class WindsurfService {
         for (WindsurfSpot spot : spots) {
             try {
                 WeatherForecast forecast = weatherService.getForecast(spot.getLatitude(), spot.getLongitude(), date);
-                if (//forecast.getWindSpd() >= 5 && forecast.getWindSpd() <= 18 &&
+                if (forecast.getWindSpd() >= 0 && forecast.getWindSpd() <= 18 &&
                         forecast.getTemp() >= 5 && forecast.getTemp() <= 35) {
                     double score = Math.pow(forecast.getWindSpd(), 3) + forecast.getTemp();
                     if (score > bestScore) {
