@@ -32,7 +32,7 @@ public class WindsurfService {
                 WeatherForecast forecast = weatherService.getForecast(spot.getLatitude(), spot.getLongitude(), date);
                 if (forecast.getWind_gust_spd() >= 5 && forecast.getWind_gust_spd() <= 18 &&
                         forecast.getTemp() >= 5 && forecast.getTemp() <= 35) {
-                    double score = Math.pow(forecast.getWind_gust_spd(), 3) + forecast.getTemp();
+                    double score = (forecast.getWind_gust_spd() * 3) + forecast.getTemp();
                     if (score > bestScore) {
                         bestScore = score;
                         bestSpot = spot;
