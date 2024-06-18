@@ -9,14 +9,14 @@ public class WeatherForecast {
     @Id
     private Long id;
     private double temp;
-    private double wind_spd;
+    private double wind_gust_spd;
 
     public WeatherForecast() {
     }
 
-    public WeatherForecast(double temp, double wind_spd) {
+    public WeatherForecast(double temp, double wind_gust_spd) {
         this.temp = temp;
-        this.wind_spd = wind_spd;
+        this.wind_gust_spd = wind_gust_spd;
     }
 
     public double getTemp() {
@@ -27,11 +27,11 @@ public class WeatherForecast {
         this.temp = temp;
     }
 
-    public double getWindSpd() {
-        return wind_spd;
+    public double getWind_gust_spd() {
+        return wind_gust_spd;
     }
 
-    public void setWindSpd(double wind_spd) {
-        this.wind_spd = wind_spd;
+    public void setWind_gust_spd(double wind_gust_spd) {
+        this.wind_gust_spd = wind_gust_spd;
     }
 }

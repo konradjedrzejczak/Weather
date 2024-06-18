@@ -15,7 +15,7 @@ public class WeatherResponse {
 
     public static class WeatherData {
         private double temp;
-        private double wind_spd;
+        private double wind_gust_spd;
 
         public double getTemp() {
             return temp;
@@ -25,12 +25,12 @@ public class WeatherResponse {
             this.temp = temp;
         }
 
-        public double getWindSpeed() {
-            return wind_spd;
+        public double getWind_gust_spd() {
+            return wind_gust_spd;
         }
 
-        public void setWindSpeed(double wind_spd) {
-            this.wind_spd = wind_spd;
+        public void setWind_gust_spd(double wind_gust_spd) {
+            this.wind_gust_spd = wind_gust_spd;
         }
     }
 }

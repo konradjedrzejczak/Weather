@@ -40,8 +40,8 @@ public class WeatherServiceImpl implements WeatherService {
         assert response != null;
         for (WeatherResponse.WeatherData weatherData : response.getData()) {
             weatherForecast.setTemp(weatherData.getTemp());
-            weatherForecast.setWindSpd(weatherData.getWindSpeed());
+            weatherForecast.setWind_gust_spd(weatherData.getWind_gust_spd());
         }
-        return new WeatherForecast(weatherForecast.getTemp(), weatherForecast.getWindSpd());
+        return new WeatherForecast(weatherForecast.getTemp(), weatherForecast.getWind_gust_spd());
     }
 }
