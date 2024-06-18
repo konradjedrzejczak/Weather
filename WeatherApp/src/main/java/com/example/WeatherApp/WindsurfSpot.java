@@ -12,7 +12,7 @@ public class WindsurfSpot {
         this.longitude = longitude;
     }
 
-    // Gettery i settery
+
     public String getName() {
         return name;
     }
