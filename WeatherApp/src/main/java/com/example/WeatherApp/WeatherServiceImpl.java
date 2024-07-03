@@ -25,23 +25,16 @@ public class WeatherServiceImpl implements WeatherService {
                 .bodyToMono(WeatherResponse.class)
                 .block();
 
-//        if (response == null || response.getData() == null) {
-//            throw new RuntimeException("No data received from Weatherbit API");
-//        }
-
         WeatherForecast weatherForecast = new WeatherForecast();
 
-//        response.subscribe(weatherResponse -> {
-//            for (WeatherResponse.WeatherData weatherData : weatherResponse.getData()) {
-//                weatherForecast.setTemp(weatherData.getTemp());
-//                weatherForecast.setWindSpd(weatherData.getWindSpeed());
-//            }
-//        });
-        assert response != null;
-        for (WeatherResponse.WeatherData weatherData : response.getData()) {
+        if (response == null) {
+            return new WeatherForecast();
+        } // a co jeśli będzie null> jak aplikacja się zachowa?
+
+        for (WeatherData weatherData : response.getData()) {
             weatherForecast.setTemp(weatherData.getTemp());
-            weatherForecast.setWind_gust_spd(weatherData.getWind_gust_spd());
+            weatherForecast.setWindSpd(weatherData.getWindSpd());
         }
-        return new WeatherForecast(weatherForecast.getTemp(), weatherForecast.getWind_gust_spd());
+        return new WeatherForecast(weatherForecast.getTemp(), weatherForecast.getWindSpd());
     }
 }
